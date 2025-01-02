@@ -15,28 +15,28 @@ int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSi
     int right = matrixColSize[0] - 1;
     while (i < (*returnSize))
     {
-        for (int col = left; col <= right; col++)
+        for (int ltr = left; ltr <= right; ltr++)
         {
-            res[i++] = matrix[top][col];
+            res[i++] = matrix[top][ltr];
         }
         top++;
-        for (int row = top; row <= bottom; row++)
+        for (int ttb = top; ttb <= bottom; ttb++)
         {
-            res[i++] = matrix[row][right];
+            res[i++] = matrix[ttb][right];
         }
         right--;
         if (top <= bottom)
         {
-            for(int col = right; col >= left; col--)
+            for(int rtl = right; rtl >= left; rtl--)
             {
-                res[i++] = matrix[bottom][col];
+                res[i++] = matrix[bottom][rtl];
             }
             bottom--;
         }
         if (left <= right)
         {
-            for (int row = bottom; row >= top; row--) {
-                res[i++] = matrix[row][left];
+            for (int btt = bottom; btt >= top; btt--) {
+                res[i++] = matrix[btt][left];
             }
             left++; 
         }
